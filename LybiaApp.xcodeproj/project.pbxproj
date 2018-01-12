@@ -8,20 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		50067187200943FC002ABF0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50067186200943FC002ABF0E /* AppDelegate.swift */; };
-		50067189200943FC002ABF0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50067188200943FC002ABF0E /* ViewController.swift */; };
 		5006718C200943FC002ABF0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5006718A200943FC002ABF0E /* Main.storyboard */; };
 		5006718E200943FC002ABF0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5006718D200943FC002ABF0E /* Assets.xcassets */; };
 		50067191200943FC002ABF0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5006718F200943FC002ABF0E /* LaunchScreen.storyboard */; };
+		5006719D2009447A002ABF0E /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5006719C2009447A002ABF0E /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		50067183200943FC002ABF0E /* LybiaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LybiaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50067186200943FC002ABF0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50067188200943FC002ABF0E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5006718B200943FC002ABF0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5006718D200943FC002ABF0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50067190200943FC002ABF0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50067192200943FC002ABF0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5006719C2009447A002ABF0E /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		5006719F200948EE002ABF0E /* Farah.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Farah.ttc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +55,55 @@
 		50067185200943FC002ABF0E /* LybiaApp */ = {
 			isa = PBXGroup;
 			children = (
+				5006719E200948E2002ABF0E /* Fonts */,
+				5006719B2009444A002ABF0E /* Extensions */,
+				5006719A20094441002ABF0E /* Model */,
+				500671992009443C002ABF0E /* View */,
+				5006719820094434002ABF0E /* Controller */,
 				50067186200943FC002ABF0E /* AppDelegate.swift */,
-				50067188200943FC002ABF0E /* ViewController.swift */,
 				5006718A200943FC002ABF0E /* Main.storyboard */,
 				5006718D200943FC002ABF0E /* Assets.xcassets */,
 				5006718F200943FC002ABF0E /* LaunchScreen.storyboard */,
 				50067192200943FC002ABF0E /* Info.plist */,
 			);
 			path = LybiaApp;
+			sourceTree = "<group>";
+		};
+		5006719820094434002ABF0E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5006719C2009447A002ABF0E /* HomeVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		500671992009443C002ABF0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5006719A20094441002ABF0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5006719B2009444A002ABF0E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5006719E200948E2002ABF0E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5006719F200948EE002ABF0E /* Farah.ttc */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +177,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50067189200943FC002ABF0E /* ViewController.swift in Sources */,
 				50067187200943FC002ABF0E /* AppDelegate.swift in Sources */,
+				5006719D2009447A002ABF0E /* HomeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
