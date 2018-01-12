@@ -55,13 +55,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOa-7J-7qJ">
                                 <rect key="frame" x="113" y="454" width="94" height="94"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اكتشف" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufs-WR-ICb">
-                                        <rect key="frame" x="4" y="0.0" width="87" height="94"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWB-Q9-D8E">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="30"/>
-                                        <color key="textColor" red="0.16366106271743774" green="0.22646898031234741" blue="0.29575842618942261" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="32"/>
+                                        <state key="normal" title="اكتشف">
+                                            <color key="titleColor" red="0.16366106271743774" green="0.22646898031234741" blue="0.29575842618942261" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="GtL-pk-FAa" kind="show" id="ERm-Yt-z7y"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -88,14 +92,100 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="btnView" destination="rOa-7J-7qJ" id="EIe-Mu-DsE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22.5" y="33.802816901408448"/>
+            <point key="canvasLocation" x="-253" y="34"/>
+        </scene>
+        <!--DetailVC-->
+        <scene sceneID="dL1-mv-60h">
+            <objects>
+                <viewController id="GtL-pk-FAa" customClass="DetailVC" customModule="LybiaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ev0-GY-gDO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مؤشر للفقر" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvW-Hl-lJy">
+                                <rect key="frame" x="50" y="35" width="220" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="5dU-oS-zie"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="Ogw-Pf-A6c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="30"/>
+                                <color key="textColor" red="0.97789322489999997" green="1" blue="0.98181509870000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fvw-8A-ndC">
+                                <rect key="frame" x="274" y="42" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="xZy-xp-LdY"/>
+                                    <constraint firstAttribute="width" constant="30" id="yQw-WK-ucl"/>
+                                </constraints>
+                                <state key="normal" image="about_us"/>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sHn-w6-169">
+                                <rect key="frame" x="100" y="88" width="121" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="2JL-Ua-2Zt"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="121" id="2jv-cS-Mh7"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="الجنس"/>
+                                    <segment title="إجمالي"/>
+                                </segments>
+                                <color key="tintColor" red="0.59209674596786499" green="0.59219902753829956" blue="0.59208321571350098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mrb-KW-WHo">
+                                <rect key="frame" x="145" y="527" width="31" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xw-Qt-KVa">
+                                        <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
+                                        <state key="normal" image="arrow"/>
+                                        <connections>
+                                            <action selector="slideUp:" destination="GtL-pk-FAa" eventType="touchUpInside" id="F3e-mC-RvX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6xw-Qt-KVa" secondAttribute="trailing" id="2b8-Iw-Jbu"/>
+                                    <constraint firstItem="6xw-Qt-KVa" firstAttribute="top" secondItem="Mrb-KW-WHo" secondAttribute="top" id="DhJ-bB-4eg"/>
+                                    <constraint firstAttribute="bottom" secondItem="6xw-Qt-KVa" secondAttribute="bottom" id="Dyi-Pw-jSb"/>
+                                    <constraint firstItem="6xw-Qt-KVa" firstAttribute="leading" secondItem="Mrb-KW-WHo" secondAttribute="leading" id="HEq-Dn-ZZ2"/>
+                                    <constraint firstAttribute="width" constant="31" id="S7s-Ig-z0t"/>
+                                    <constraint firstAttribute="height" constant="31" id="b0x-gm-C4d"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20392152667045593" green="0.28508573770523071" blue="0.36743760108947754" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kvW-Hl-lJy" firstAttribute="top" secondItem="Ztf-uB-trC" secondAttribute="top" constant="15" id="EB8-wN-oNa"/>
+                            <constraint firstItem="Mrb-KW-WHo" firstAttribute="centerX" secondItem="Ev0-GY-gDO" secondAttribute="centerX" id="HTb-xU-dlo"/>
+                            <constraint firstItem="sHn-w6-169" firstAttribute="top" secondItem="kvW-Hl-lJy" secondAttribute="bottom" constant="8" id="I4c-4m-JqB"/>
+                            <constraint firstItem="Fvw-8A-ndC" firstAttribute="top" secondItem="Ztf-uB-trC" secondAttribute="top" constant="22" id="Npt-nj-Grw"/>
+                            <constraint firstItem="kvW-Hl-lJy" firstAttribute="centerX" secondItem="Ev0-GY-gDO" secondAttribute="centerX" id="ckV-2a-4g3"/>
+                            <constraint firstItem="Ztf-uB-trC" firstAttribute="trailing" secondItem="Fvw-8A-ndC" secondAttribute="trailing" constant="16" id="e1l-lW-dVc"/>
+                            <constraint firstItem="sHn-w6-169" firstAttribute="centerX" secondItem="Ev0-GY-gDO" secondAttribute="centerX" id="uzV-Eh-QDO"/>
+                            <constraint firstItem="Ztf-uB-trC" firstAttribute="bottom" secondItem="Mrb-KW-WHo" secondAttribute="bottom" constant="10" id="zWr-bE-i0C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ztf-uB-trC"/>
+                    </view>
+                    <connections>
+                        <outlet property="btn" destination="6xw-Qt-KVa" id="61B-Ge-Ekj"/>
+                        <outlet property="btnView" destination="Mrb-KW-WHo" id="Yqv-xW-4bd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MkP-OX-HXR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="630" y="33.802816901408448"/>
         </scene>
     </scenes>
     <resources>
         <image name="about_us" width="29" height="29"/>
+        <image name="arrow" width="17" height="15"/>
         <image name="flag_bg" width="375" height="582"/>
     </resources>
 </document>
