@@ -14,6 +14,7 @@
 		5006719D2009447A002ABF0E /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5006719C2009447A002ABF0E /* HomeVC.swift */; };
 		50B06ECF20095AF6000EF3FC /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B06ECE20095AF6000EF3FC /* DetailVC.swift */; };
 		50C5EF352009632900079DBC /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5EF342009632900079DBC /* UIImageExtension.swift */; };
+		50C5EF3620096E5300079DBC /* AnchorsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B06ED020095F2B000EF3FC /* AnchorsExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -185,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50C5EF3620096E5300079DBC /* AnchorsExtensions.swift in Sources */,
 				50067187200943FC002ABF0E /* AppDelegate.swift in Sources */,
 				5006719D2009447A002ABF0E /* HomeVC.swift in Sources */,
 				50B06ECF20095AF6000EF3FC /* DetailVC.swift in Sources */,
