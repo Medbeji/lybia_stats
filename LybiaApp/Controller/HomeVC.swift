@@ -18,7 +18,7 @@ class HomeVC: UIViewController {
     }
     
     func setupBtn(){
-        
+
         // Set the corner radius for the image
         
         
