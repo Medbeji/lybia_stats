@@ -14,7 +14,6 @@ class DetailVC: UIViewController {
     @IBOutlet weak var btn: UIButton!
     var isSlideUp: Bool = true
     var menuBottomAnchor: NSLayoutConstraint?
-    let ageDatasource = AgeMenuDataSource()
     
     
     /* Menu Elements */
@@ -35,7 +34,7 @@ class DetailVC: UIViewController {
             lb.text = "العمر"
             lb.font = UIFont.init(name: "Farah", size: 22)
             lb.textAlignment = .center
-            lb.backgroundColor = .red
+            lb.textColor = .white
             return lb
         }()
     
@@ -50,6 +49,7 @@ class DetailVC: UIViewController {
         let ageHorizontalLine: UIView = {
             let hl = UIView()
             hl.backgroundColor = .lightGray
+            hl.alpha = 0.5
             return hl
         }()
         let sectionHorizontalLine: UIView = {
@@ -58,33 +58,24 @@ class DetailVC: UIViewController {
             return hl
         }()
     
-        lazy var ageCollectionView: UICollectionView = {
-            let layout = UICollectionViewFlowLayout()
-            layout.minimumLineSpacing = 15
-            layout.scrollDirection = .horizontal
-            let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-            cv.backgroundColor = .white
-            return cv
-        }()
-    
+        let agePickerView = CustomUIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMenu()
-        setupAgeCollectionView()
+        setupAgePickerView()
     }
     
-    
-    func setupAgeCollectionView(){
-        ageCollectionView.dataSource = ageDatasource.self
-        ageCollectionView.delegate = ageDatasource.self
-        ageDatasource.collectionView = ageCollectionView
-        ageCollectionView.register(CategoryCell.self, forCellWithReuseIdentifier: ageDatasource.cellId)
-        self.menuView.addSubview(ageCollectionView)
-        ageCollectionView.anchor(self.ageHorizontalLine.bottomAnchor, left: self.menuView.leftAnchor, bottom: nil, right: self.menuView.rightAnchor, topConstant: 3, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 70)
-        ageCollectionView.scrollToItem(at: IndexPath(row: 2, section: 0), at: .right, animated: false)
-        
+    func setupAgePickerView(){
+        agePickerView.widthComponent = self.view.frame.width
+        agePickerView.delegate = agePickerView.self
+        agePickerView.dataSource = agePickerView.self
+        agePickerView.transformToHorizontale()
+        menuView.addSubview(agePickerView)
+        agePickerView.frame = CGRect(x: 0 - 300, y: 44  , width: view.frame.width + 600, height: 75)
+        agePickerView.selectRow(1, inComponent: 0, animated: true)
     }
+    
     func setupMenu(){
         // Set the corner radius for the image
         btnView.layer.cornerRadius = btnView.frame.width/2
@@ -102,9 +93,10 @@ class DetailVC: UIViewController {
         self.menuView.addSubview(ageTitle)
         self.menuView.addSubview(ageHorizontalLine)
         ageTitle.anchor(menuView.topAnchor, left: menuView.leftAnchor, bottom: nil, right: menuView.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 30)
-        ageHorizontalLine.anchor(ageTitle.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 1, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 1)
-        ageHorizontalLine.anchorCenterXToSuperview()
-        
+//        ageHorizontalLine.anchor(ageTitle.bottomAnchor, left: nil, bottom: nil, right: nil, topConstant: 1, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 120, heightConstant: 1)
+//        
+//        ageHorizontalLine.anchorCenterXToSuperview()
+     
     }
     
    
@@ -132,21 +124,6 @@ class DetailVC: UIViewController {
  
 }
 
-class CategoryCell: UICollectionViewCell {
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupViews()
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupViews(){
-        
-    }
-}
+
 
 
