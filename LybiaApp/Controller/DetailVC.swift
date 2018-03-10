@@ -12,9 +12,14 @@ class DetailVC: UIViewController {
 
     @IBOutlet weak var btnView: UIView!
     @IBOutlet weak var btn: UIButton!
+    
+    
+    
     var isSlideUp: Bool = true
     var menuBottomAnchor: NSLayoutConstraint?
     
+    @IBOutlet weak var femaleLogo: UIImageView!
+    @IBOutlet weak var maleLogo: UIImageView!
     
     /* Menu Elements */
         let menuView: UIView =  {
@@ -59,6 +64,11 @@ class DetailVC: UIViewController {
         setupMenu()
         setupPickerView(pickerView: agePickerView,y: 44)
         setupPickerView(pickerView: sectionPickerView,y:160)
+        fadeInLogos()
+    }
+    
+    func fadeInLogos(){
+        
     }
     
     func setupPickerView(pickerView: CustomUIPickerView,y: CGFloat){

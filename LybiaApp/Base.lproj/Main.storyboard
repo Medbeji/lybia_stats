@@ -43,7 +43,7 @@
                                 <state key="normal" image="about_us"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المؤشر العام للفقر" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nur-Or-WjR">
-                                <rect key="frame" x="82" y="54" width="156.5" height="21"/>
+                                <rect key="frame" x="81.5" y="54" width="157" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="TOb-8x-qct"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="156" id="vrH-PO-F94"/>
@@ -127,9 +127,9 @@
                                 <state key="normal" image="about_us"/>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sHn-w6-169">
-                                <rect key="frame" x="100" y="88" width="121" height="29"/>
+                                <rect key="frame" x="99.5" y="88" width="121" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="2JL-Ua-2Zt"/>
+                                    <constraint firstAttribute="height" constant="28" id="2JL-Ua-2Zt" userLabel="height = 18"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="121" id="2jv-cS-Mh7"/>
                                 </constraints>
                                 <segments>
@@ -139,7 +139,7 @@
                                 <color key="tintColor" red="0.59209674596786499" green="0.59219902753829956" blue="0.59208321571350098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mrb-KW-WHo">
-                                <rect key="frame" x="145" y="527" width="31" height="31"/>
+                                <rect key="frame" x="144.5" y="527" width="31" height="31"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xw-Qt-KVa">
                                         <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
@@ -159,13 +159,25 @@
                                     <constraint firstAttribute="height" constant="31" id="b0x-gm-C4d"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="male" translatesAutoresizingMaskIntoConstraints="NO" id="2Z3-6U-gKo">
+                                <rect key="frame" x="18.5" y="158" width="126" height="247"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="female" translatesAutoresizingMaskIntoConstraints="NO" id="ppq-D2-V6O">
+                                <rect key="frame" x="178" y="158" width="126" height="247"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.20392152667045593" green="0.28508573770523071" blue="0.36743760108947754" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="2Z3-6U-gKo" firstAttribute="centerX" secondItem="Ev0-GY-gDO" secondAttribute="centerX" constant="-78.5" id="2s6-Ll-cf4" userLabel="male.centerX = centerX -70"/>
+                            <constraint firstItem="ppq-D2-V6O" firstAttribute="leading" secondItem="2Z3-6U-gKo" secondAttribute="trailing" constant="33.5" id="3wL-nv-OyG"/>
                             <constraint firstItem="kvW-Hl-lJy" firstAttribute="top" secondItem="Ztf-uB-trC" secondAttribute="top" constant="15" id="EB8-wN-oNa"/>
                             <constraint firstItem="Mrb-KW-WHo" firstAttribute="centerX" secondItem="Ev0-GY-gDO" secondAttribute="centerX" id="HTb-xU-dlo"/>
+                            <constraint firstItem="ppq-D2-V6O" firstAttribute="top" secondItem="2Z3-6U-gKo" secondAttribute="bottom" constant="-247" id="HZG-fd-2fk"/>
                             <constraint firstItem="sHn-w6-169" firstAttribute="top" secondItem="kvW-Hl-lJy" secondAttribute="bottom" constant="8" id="I4c-4m-JqB"/>
+                            <constraint firstItem="ppq-D2-V6O" firstAttribute="width" secondItem="2Z3-6U-gKo" secondAttribute="width" id="JR5-Tc-HZR"/>
+                            <constraint firstItem="2Z3-6U-gKo" firstAttribute="top" secondItem="sHn-w6-169" secondAttribute="bottom" constant="42" id="MtE-ek-KAt"/>
                             <constraint firstItem="Fvw-8A-ndC" firstAttribute="top" secondItem="Ztf-uB-trC" secondAttribute="top" constant="22" id="Npt-nj-Grw"/>
+                            <constraint firstItem="ppq-D2-V6O" firstAttribute="height" secondItem="2Z3-6U-gKo" secondAttribute="height" id="U7u-o2-DDK"/>
                             <constraint firstItem="kvW-Hl-lJy" firstAttribute="centerX" secondItem="Ev0-GY-gDO" secondAttribute="centerX" id="ckV-2a-4g3"/>
                             <constraint firstItem="Ztf-uB-trC" firstAttribute="trailing" secondItem="Fvw-8A-ndC" secondAttribute="trailing" constant="16" id="e1l-lW-dVc"/>
                             <constraint firstItem="sHn-w6-169" firstAttribute="centerX" secondItem="Ev0-GY-gDO" secondAttribute="centerX" id="uzV-Eh-QDO"/>
@@ -176,16 +188,20 @@
                     <connections>
                         <outlet property="btn" destination="6xw-Qt-KVa" id="61B-Ge-Ekj"/>
                         <outlet property="btnView" destination="Mrb-KW-WHo" id="Yqv-xW-4bd"/>
+                        <outlet property="femaleLogo" destination="ppq-D2-V6O" id="wGV-2m-qnS"/>
+                        <outlet property="maleLogo" destination="2Z3-6U-gKo" id="0Xd-wo-Agj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MkP-OX-HXR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="630" y="33.802816901408448"/>
+            <point key="canvasLocation" x="628.125" y="32.74647887323944"/>
         </scene>
     </scenes>
     <resources>
         <image name="about_us" width="29" height="29"/>
         <image name="arrow" width="17" height="15"/>
+        <image name="female" width="126" height="246"/>
         <image name="flag_bg" width="375" height="582"/>
+        <image name="male" width="126" height="247"/>
     </resources>
 </document>
