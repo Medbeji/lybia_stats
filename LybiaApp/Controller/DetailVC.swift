@@ -20,6 +20,36 @@ class DetailVC: UIViewController {
     
     @IBOutlet weak var femaleLogo: UIImageView!
     @IBOutlet weak var maleLogo: UIImageView!
+    @IBOutlet weak var totalLogo: UIImageView!
+    
+    @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
+    
+    let femaleNbr: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "3500,00"
+        lbl.textColor = .white
+        lbl.textAlignment  = .center
+        lbl.font = UIFont.systemFont(ofSize: 22)
+        return lbl
+    }()
+    
+    let maleNbr: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "3500,00"
+        lbl.textColor = .white
+        lbl.textAlignment  = .center
+        lbl.font = UIFont.systemFont(ofSize: 22)
+        return lbl
+    }()
+    
+    let totalNbr: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "3500,00"
+        lbl.textColor = .white
+        lbl.textAlignment  = .center
+        lbl.font = UIFont.systemFont(ofSize: 22)
+        return lbl
+    }()
     
     /* Menu Elements */
         let menuView: UIView =  {
@@ -54,8 +84,7 @@ class DetailVC: UIViewController {
         }()
     
     
-    
-    
+
         let agePickerView = CustomUIPickerView()
         let sectionPickerView = CustomUIPickerView()
     
@@ -64,12 +93,68 @@ class DetailVC: UIViewController {
         setupMenu()
         setupPickerView(pickerView: agePickerView,y: 44)
         setupPickerView(pickerView: sectionPickerView,y:160)
-        fadeInLogos()
+        numbersSetup()
     }
     
-    func fadeInLogos(){
+    override func viewWillAppear(_ animated: Bool) {
+        animateFirstCategory()
+    }
+   
+    @IBAction func changeCategory(_ sender: Any) {
+        
+        switch categorySegmentedControl.selectedSegmentIndex
+        {
+        case 0:
+             animateFirstCategory()
+        case 1:
+             animateSecondCategory()
+        default:
+            break
+        }
+    }
+    
+    func animateFirstCategory() {
+        self.femaleLogo.alpha = 1
+        self.maleLogo.alpha = 1
+        self.totalLogo.alpha = 0
+        bouncingAnimation(view: self.femaleLogo)
+        bouncingAnimation(view: self.maleLogo)
+    }
+    func animateSecondCategory(){
+        self.femaleLogo.alpha = 0
+        self.maleLogo.alpha = 0
+        self.totalLogo.alpha = 1
+        bouncingAnimation(view: self.totalLogo)
+    }
+    
+    func bouncingAnimation(view : UIView){
+        view.transform = CGAffineTransform(scaleX: 0.4, y: 0.4)
+        UIView.animate(withDuration: 3.0,
+                       delay: 0,
+                       usingSpringWithDamping: CGFloat(0.20),
+                       initialSpringVelocity: CGFloat(6.0),
+                       options: UIViewAnimationOptions.allowUserInteraction,
+                       animations: {
+                        view.transform = CGAffineTransform.identity
+        },
+                       completion: { Void in()  }
+        )
+    }
+    
+    func numbersSetup(){
+        
+         // check if it's sex or | general
+        maleLogo.addSubview(maleNbr)
+        maleNbr.anchor(maleLogo.topAnchor, left: maleLogo.leftAnchor, bottom: nil, right: maleLogo.rightAnchor, topConstant: 5, leftConstant: 1, bottomConstant: 0, rightConstant: 1, widthConstant: 0, heightConstant: 25)
+        femaleLogo.addSubview(femaleNbr)
+        femaleNbr.anchor(femaleLogo.topAnchor, left: femaleLogo.leftAnchor, bottom: nil, right: femaleLogo.rightAnchor, topConstant: 5, leftConstant: 1, bottomConstant: 0, rightConstant: 1, widthConstant: 0, heightConstant: 25)
+        
+        totalLogo.addSubview(totalNbr)
+        totalNbr.anchor(totalLogo.topAnchor, left: totalLogo.leftAnchor, bottom: nil, right: totalLogo.rightAnchor, topConstant: 5, leftConstant: 1, bottomConstant: 0, rightConstant: 1, widthConstant: 0, heightConstant: 25)
         
     }
+    
+    
     
     func setupPickerView(pickerView: CustomUIPickerView,y: CGFloat){
         pickerView.widthComponent = self.view.frame.width
