@@ -211,6 +211,7 @@
                         <outlet property="btnView" destination="Mrb-KW-WHo" id="Yqv-xW-4bd"/>
                         <outlet property="categorySegmentedControl" destination="sHn-w6-169" id="3MZ-9y-gCj"/>
                         <outlet property="femaleLogo" destination="ppq-D2-V6O" id="wGV-2m-qnS"/>
+                        <outlet property="indicatorsLogo" destination="n5v-K5-ZR2" id="aih-PW-xFE"/>
                         <outlet property="maleLogo" destination="2Z3-6U-gKo" id="0Xd-wo-Agj"/>
                         <outlet property="totalLogo" destination="tO6-DQ-Bj8" id="Gr0-iC-KYS"/>
                     </connections>

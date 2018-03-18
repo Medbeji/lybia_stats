@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailVC: UIViewController {
+class DetailVC: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var btnView: UIView!
     @IBOutlet weak var btn: UIButton!
@@ -23,6 +23,28 @@ class DetailVC: UIViewController {
     @IBOutlet weak var totalLogo: UIImageView!
     
     @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
+    
+    lazy var indicatorsCV: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 15
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.backgroundColor  = .clear
+        cv.dataSource = self
+        cv.delegate = self
+        cv.contentInset =  UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
+        return cv
+    }()
+    
+    
+    let swipeUPView : UIView = {
+       let view = UIView()
+        view.backgroundColor = .yellow
+        return view
+    }()
+    
+    let cellId = "indicatorsCellId"
+    
     
     let femaleNbr: UILabel = {
         let lbl = UILabel()
@@ -83,6 +105,7 @@ class DetailVC: UIViewController {
             return lb
         }()
     
+    @IBOutlet weak var indicatorsLogo: UIImageView!
     
 
         let agePickerView = CustomUIPickerView()
@@ -94,6 +117,36 @@ class DetailVC: UIViewController {
         setupPickerView(pickerView: agePickerView,y: 44)
         setupPickerView(pickerView: sectionPickerView,y:160)
         numbersSetup()
+        setupSwipeUpGesture()
+        setupIndicatorsCV()
+    }
+    func setupSwipeUpGesture(){
+        let swipeUpGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(gesture:)))
+        swipeUpGesture.direction = UISwipeGestureRecognizerDirection.up
+        swipeUpGesture.delegate = self
+        let swipeDownGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(gesture:)))
+        swipeDownGesture.direction = UISwipeGestureRecognizerDirection.down
+        swipeDownGesture.delegate = self
+        view.addGestureRecognizer(swipeUpGesture)
+        view.addGestureRecognizer(swipeDownGesture)
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+
+            return true
+    }
+    
+    
+    @objc func handleSwipe(gesture: UISwipeGestureRecognizer) {
+        slideUp(swipeUPView)
+    }
+    
+    
+    func setupIndicatorsCV(){
+        view.addSubview(indicatorsCV)
+        view.sendSubview(toBack: indicatorsCV)
+        indicatorsCV.register(IndicatorCell.self, forCellWithReuseIdentifier: cellId)
+        indicatorsCV.anchor(indicatorsLogo.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 20, leftConstant: 2, bottomConstant: 0, rightConstant: 2, widthConstant: 0, heightConstant: 82)
     }
     
     override func viewWillAppear(_ animated: Bool) {

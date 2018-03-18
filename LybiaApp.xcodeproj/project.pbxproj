@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		500328E8205E730C00EEBA0E /* IndicatorsCVDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500328E7205E730C00EEBA0E /* IndicatorsCVDelegates.swift */; };
+		500328EA205E73E800EEBA0E /* IndicatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500328E9205E73E800EEBA0E /* IndicatorCell.swift */; };
 		50067187200943FC002ABF0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50067186200943FC002ABF0E /* AppDelegate.swift */; };
 		5006718C200943FC002ABF0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5006718A200943FC002ABF0E /* Main.storyboard */; };
 		5006718E200943FC002ABF0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5006718D200943FC002ABF0E /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		500328E7205E730C00EEBA0E /* IndicatorsCVDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorsCVDelegates.swift; sourceTree = "<group>"; };
+		500328E9205E73E800EEBA0E /* IndicatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorCell.swift; sourceTree = "<group>"; };
 		50067183200943FC002ABF0E /* LybiaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LybiaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50067186200943FC002ABF0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5006718B200943FC002ABF0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 			children = (
 				5006719C2009447A002ABF0E /* HomeVC.swift */,
 				50B06ECE20095AF6000EF3FC /* DetailVC.swift */,
+				500328E7205E730C00EEBA0E /* IndicatorsCVDelegates.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -90,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				503C39A92043118100E45545 /* CustomUIPickerView.swift */,
+				500328E9205E73E800EEBA0E /* IndicatorCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,7 +198,9 @@
 				50C5EF3620096E5300079DBC /* AnchorsExtensions.swift in Sources */,
 				50067187200943FC002ABF0E /* AppDelegate.swift in Sources */,
 				503C39AA2043118100E45545 /* CustomUIPickerView.swift in Sources */,
+				500328EA205E73E800EEBA0E /* IndicatorCell.swift in Sources */,
 				5006719D2009447A002ABF0E /* HomeVC.swift in Sources */,
+				500328E8205E730C00EEBA0E /* IndicatorsCVDelegates.swift in Sources */,
 				50B06ECF20095AF6000EF3FC /* DetailVC.swift in Sources */,
 				50C5EF352009632900079DBC /* UIImageExtension.swift in Sources */,
 			);
