@@ -64,8 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				5006719E200948E2002ABF0E /* Fonts */,
+				5098EAD6205DB2F100057F5D /* Model */,
 				5006719B2009444A002ABF0E /* Extensions */,
-				5006719A20094441002ABF0E /* Model */,
 				500671992009443C002ABF0E /* View */,
 				5006719820094434002ABF0E /* Controller */,
 				50067186200943FC002ABF0E /* AppDelegate.swift */,
@@ -94,13 +94,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		5006719A20094441002ABF0E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		5006719B2009444A002ABF0E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +109,13 @@
 				5006719F200948EE002ABF0E /* Farah.ttc */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5098EAD6205DB2F100057F5D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
