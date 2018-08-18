@@ -12,9 +12,7 @@ class DetailVC: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var btnView: UIView!
     @IBOutlet weak var btn: UIButton!
-    
-    
-    
+   
     var isSlideUp: Bool = true
     var menuBottomAnchor: NSLayoutConstraint?
     
@@ -44,7 +42,8 @@ class DetailVC: UIViewController, UIGestureRecognizerDelegate {
     }()
     
     let cellId = "indicatorsCellId"
-    
+    let ageModel = ["age1","age2","age3","age4"]
+    let sectorModel = ["health","education","living"]
     
     let femaleNbr: UILabel = {
         let lbl = UILabel()
@@ -107,18 +106,18 @@ class DetailVC: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var indicatorsLogo: UIImageView!
     
-
         let agePickerView = CustomUIPickerView()
         let sectionPickerView = CustomUIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMenu()
-        setupPickerView(pickerView: agePickerView,y: 44)
-        setupPickerView(pickerView: sectionPickerView,y:160)
+        setupPickerView(pickerView: agePickerView,y: 44,selectedIndex: (self.ageModel.count/2))
+        setupPickerView(pickerView: sectionPickerView,y:160,selectedIndex: (self.sectorModel.count/2))
         numbersSetup()
         setupSwipeUpGesture()
         setupIndicatorsCV()
+        
     }
     func setupSwipeUpGesture(){
         let swipeUpGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(gesture:)))
@@ -131,8 +130,7 @@ class DetailVC: UIViewController, UIGestureRecognizerDelegate {
         view.addGestureRecognizer(swipeDownGesture)
     }
     
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool{
             return true
     }
     
@@ -209,17 +207,24 @@ class DetailVC: UIViewController, UIGestureRecognizerDelegate {
     
     
     
-    func setupPickerView(pickerView: CustomUIPickerView,y: CGFloat){
+    func setupPickerView(pickerView: CustomUIPickerView,y: CGFloat,selectedIndex: Int){
         pickerView.widthComponent = self.view.frame.width
         pickerView.delegate = pickerView.self
         pickerView.dataSource = pickerView.self
         pickerView.transformToHorizontale()
         menuView.addSubview(pickerView)
         pickerView.frame = CGRect(x: 0 - 300, y: y  , width: view.frame.width + 600, height: 75)
-        pickerView.selectRow(1, inComponent: 0, animated: true)
+        pickerView.selectRow(selectedIndex, inComponent: 0, animated: true)
     }
     
     func setupMenu(){
+     
+        agePickerView.model = ageModel
+        sectionPickerView.model = sectorModel
+
+ 
+        
+        
         // Set the corner radius for the image
         btnView.layer.cornerRadius = btnView.frame.width/2
         // Give btn a shadow

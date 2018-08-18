@@ -14,6 +14,8 @@
 		5006718E200943FC002ABF0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5006718D200943FC002ABF0E /* Assets.xcassets */; };
 		50067191200943FC002ABF0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5006718F200943FC002ABF0E /* LaunchScreen.storyboard */; };
 		5006719D2009447A002ABF0E /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5006719C2009447A002ABF0E /* HomeVC.swift */; };
+		500CA96D205EA3F400D10E73 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500CA96C205EA3F400D10E73 /* Indicator.swift */; };
+		500CA96F205EA43900D10E73 /* SecAge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500CA96E205EA43900D10E73 /* SecAge.swift */; };
 		503C39AA2043118100E45545 /* CustomUIPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503C39A92043118100E45545 /* CustomUIPickerView.swift */; };
 		50B06ECF20095AF6000EF3FC /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B06ECE20095AF6000EF3FC /* DetailVC.swift */; };
 		50C5EF352009632900079DBC /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C5EF342009632900079DBC /* UIImageExtension.swift */; };
@@ -31,6 +33,9 @@
 		50067192200943FC002ABF0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5006719C2009447A002ABF0E /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		5006719F200948EE002ABF0E /* Farah.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Farah.ttc; sourceTree = "<group>"; };
+		500CA96C205EA3F400D10E73 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
+		500CA96E205EA43900D10E73 /* SecAge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecAge.swift; sourceTree = "<group>"; };
+		500CA972205EAFC600D10E73 /* indicator_details.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = indicator_details.json; sourceTree = "<group>"; };
 		503C39A92043118100E45545 /* CustomUIPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIPickerView.swift; sourceTree = "<group>"; };
 		50B06ECE20095AF6000EF3FC /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		50B06ED020095F2B000EF3FC /* AnchorsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorsExtensions.swift; sourceTree = "<group>"; };
@@ -67,6 +72,7 @@
 		50067185200943FC002ABF0E /* LybiaApp */ = {
 			isa = PBXGroup;
 			children = (
+				500CA970205EAF8500D10E73 /* storage */,
 				5006719E200948E2002ABF0E /* Fonts */,
 				5098EAD6205DB2F100057F5D /* Model */,
 				5006719B2009444A002ABF0E /* Extensions */,
@@ -117,9 +123,19 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		500CA970205EAF8500D10E73 /* storage */ = {
+			isa = PBXGroup;
+			children = (
+				500CA972205EAFC600D10E73 /* indicator_details.json */,
+			);
+			path = storage;
+			sourceTree = "<group>";
+		};
 		5098EAD6205DB2F100057F5D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				500CA96C205EA3F400D10E73 /* Indicator.swift */,
+				500CA96E205EA43900D10E73 /* SecAge.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,8 +216,10 @@
 				503C39AA2043118100E45545 /* CustomUIPickerView.swift in Sources */,
 				500328EA205E73E800EEBA0E /* IndicatorCell.swift in Sources */,
 				5006719D2009447A002ABF0E /* HomeVC.swift in Sources */,
+				500CA96F205EA43900D10E73 /* SecAge.swift in Sources */,
 				500328E8205E730C00EEBA0E /* IndicatorsCVDelegates.swift in Sources */,
 				50B06ECF20095AF6000EF3FC /* DetailVC.swift in Sources */,
+				500CA96D205EA3F400D10E73 /* Indicator.swift in Sources */,
 				50C5EF352009632900079DBC /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

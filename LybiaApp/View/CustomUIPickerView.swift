@@ -10,9 +10,9 @@ import UIKit
 
 class CustomUIPickerView: UIPickerView,UIPickerViewDataSource, UIPickerViewDelegate {
 
-    var model = ["5ans","6ans","7ans","8ans"]
+    var model = [String]()
     
-    let pickerView = UIPickerView()
+ 
     
     var rotationAngle: CGFloat!
     
@@ -38,23 +38,12 @@ class CustomUIPickerView: UIPickerView,UIPickerViewDataSource, UIPickerViewDeleg
        
         let view = UIView()
         view.frame = CGRect(x: 0, y: 0, width: 75, height: 150)
-        
-        let label = UILabel()
-        label.frame = CGRect(x: 0, y: 135, width: 75, height: 15)
-        label.textAlignment = .center
-        label.font = UIFont.init(name: "Farah", size: 18)
-        
-        let image = UIImage(named: "40ans")
+     
+        let image = UIImage(named: model[row])
         let imageView = UIImageView(image: image)
         imageView.frame = CGRect(x: 13, y: 75, width: 55, height: 55)
-        
-        label.text = model[row]
-        label.textColor = .lightGray
-        view.addSubview(label)
         view.addSubview(imageView)
-  
-
-        // view rotation
+         // view rotation
         view.transform = CGAffineTransform(rotationAngle: 90 * (.pi/180))
         
         return view

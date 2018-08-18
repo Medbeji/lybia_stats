@@ -1,0 +1,46 @@
+[
+  {
+    "id": "Chronic disease with access to medicine",
+    "details": "Number of household member with chronic disease"
+  },
+  {
+    "id": "Sanitation",
+    "details": "Household is or not connected to public santation sewage network"
+  },
+  {
+    "id": "Drinking water",
+    "details": "Household has or not access to safe water"
+  },
+  {
+    "id": "School attendance",
+    "details": "Household with a children not attending school"
+  },
+  {
+    "id": "Number of years of schooling",
+    "details": "Household achieving a minimum number of schooling year"
+  },
+  {
+    "id": "Unemployment",
+    "details": "Household with unemployed adult"
+  },
+  {
+    "id": "Condition of house%uFFFD",
+    "details": "Number of inadequate house"
+  },
+  {
+    "id": "Condition of the Surrounding",
+    "details": "Number of households living in houseswith bad surrounding conditions"
+  },
+  {
+    "id": "overcrowding",
+    "details": "Number of households with overcrowding more than 4"
+  },
+  {
+    "id": "Kitchen",
+    "details": "Number of household with no kitchen at house"
+  },
+  {
+    "id": "Assets",
+    "details": "Number of household without a minimum number of assest (3)"
+  }
+]
